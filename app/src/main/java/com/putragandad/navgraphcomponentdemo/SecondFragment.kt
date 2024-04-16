@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.putragandad.navgraphcomponentdemo.databinding.FragmentSecondBinding
 
 class SecondFragment : Fragment() {
@@ -23,7 +24,7 @@ class SecondFragment : Fragment() {
         val textView = view.findViewById<TextView>(R.id.tv_second_fragment)
 
         textView.setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.navigateToFirstFragment)
+            findNavController().navigate(R.id.navigateToFirstFragment, null)
         }
 
         return view
